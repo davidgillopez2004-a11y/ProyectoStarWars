@@ -1,4 +1,4 @@
 # ProyectoStarW
 Integrantes
-Yago Fernandez Blandon
+Yago Fernandez Blandon /
 David Gil López
