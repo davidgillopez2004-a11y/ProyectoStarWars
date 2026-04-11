@@ -1,0 +1,215 @@
+ /* ESTILOS GENERALES DEL SITIO */
+body {
+  font-family: Arial, sans-serif;
+  background: #0d1117;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Toda la pagina */
+.app {
+  max-width: 1100px;
+  margin: auto;
+  background: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* BARRA SUPERIOR header */
+.topbar {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #30363d;
+}
+
+/* Texto Alianza Rebelde */
+.topbar-logo {
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+/* Navegación superior */
+.topbar-nav span {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Opción activa del menú */
+.topbar-nav .active {
+  background: #30363d;
+  border-radius: 5px;
+}
+
+/* TÍTULOS PRINCIPALES  */
+.title-block h1 {
+  margin-bottom: 5px;
+}
+
+.title-block p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* FILTROS Y BUSCADOR */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* Input de búsqueda */
+.search input {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: white;
+}
+
+/* Etiquetas pill */
+.pill {
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  font-size: 13px;
+}
+
+/* GRID DE TARJETAS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+/*TARJETAS DE NAVES */
+.card {
+  background: #1f242d;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+}
+
+/* Cabecera de la tarjeta (nombre + tipo) */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Tipo de nave */
+.card-type {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Cuerpo de la tarjeta (velocidad, tripulación) */
+.card-body {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card-body .label {
+  color: #9ca3af;
+}
+
+/* Pie de la tarjeta */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+/* ESTADOS DE LAS NAVES */
+.status {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Estado: Operativa */
+.operativa {
+  background: #1e4620;
+  color: #2ecc71;
+}
+
+/* Estado: En reparación */
+.reparacion {
+  background: #4d3b00;
+  color: #f1c40f;
+}
+
+/* Estado: Desmantelada */
+.desmantelada {
+  background: #4a1f1f;
+  color: #e74c3c;
+}
+
+/* Registros de naves */
+
+section {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+/* Espaciado entre secciones */
+section + section {
+    margin-top: 25px;
+}
+
+/* Estilo para los títulos dentro de secciones */
+section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 8px;
+}
+
+/* Inputs cuando están seleccionados */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+/* Botón desactivado */
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+/* Hover en filas de la tabla */
+tbody tr:hover {
+    background: #1f2937;
+}
+
+/* Celdas de acciones */
+td:last-child {
+    text-align: center;
+}
+
+/* Mensaje de tabla vacía */
+td[colspan] {
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+}

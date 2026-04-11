@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Rebelde</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar-logo">Alianza Rebelde</div>
+      <nav class="topbar-nav">
+        <span class="active">Hangar de Naves</span>
+        <span>Registro de Pilotos</span>
+        <span>Panel de Misiones</span>
+        <span>Mando de la Alianza</span>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="title-block">
+        <h1>Hangar de Naves</h1>
+        <p>Catálogo completo de la flota de la Alianza Rebelde</p>
+      </section>
+
+      <section class="filters">
+        <div class="search">
+          <input type="text" placeholder="Buscar por nombre..." />
+        </div>
+        <div class="pill pill-strong">Todos</div>
+        <div class="pill">Mostrando 10 de 10 naves</div>
+        <div class="pill pill-ghost">Fil. Velocidad ↑</div>
+      </section>
+
+      <section class="grid">
+
+        <!-- 1 Transporte Rebelde -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Transporte Rebelde</div>
+            <div class="card-type">Transporte</div>
+          </div>
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 700 megaluz</div>
+            <div><span class="label">Tripulación:</span> 10 personas</div>
+          </div>
+          <div class="card-footer">
+            <span class="status reparacion">En Reparación</span>
+            <small>ID-TR-01</small>
+          </div>
+        </article>
+
+        <!-- 2 Fragata Mon Calamari -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Fragata Mon Calamari</div>
+            <div class="card-type">Fragata</div>
+          </div>
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 800 megaluz</div>
+            <div><span class="label">Tripulación:</span> 500 personas</div>
+          </div>
+          <div class="card-footer">
+            <span class="status operativa">Operativa</span>
+            <small>ID-FR-02</small>
+          </div>
+        </article>
+
+        <!-- 3 Crucero Nebulon-B -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Crucero Nebulon-B</div>
+            <div class="card-type">Fragata</div>
+          </div>
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 850 megaluz</div>
+            <div><span class="label">Tripulación:</span> 800 personas</div>
+          </div>
+          <div class="card-footer">
+            <span class="status desmantelada">Desmantelada</span>
+            <small>ID-FR-03</small>
+          </div>
+        </article>
+
+        <!-- 4 Caza Z-95 -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Caza Z-95</div>
+            <div class="card-type">Caza</div>
+          </div>
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 900 megaluz</div>
+            <div><span class="label">Tripulación:</span> 1 persona</div>
+          </div>
+          <div class="card-footer">
+            <span class="status reparacion">En Reparación</span>
+            <small>ID-CZ-04</small>
+          </div>
+        </article>
+
+        <!-- 5 B-Wing -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">B-Wing</div>
+            <div class="card-type">Bombardero</div>
+          </div>
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 950 megaluz</div>
+            <div><span class="label">Tripulación:</span> 1 persona</div>
+          </div>
+          <div class="card-footer">
+            <span class="status operativa">Operativa</span>
+            <small>ID-BW-05</small>
+          </div>
+        </article>
+
+        <!-- 6 U-Wing -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">U-Wing</div>
+            <div class="card-type">Transporte</div>
+          </div>
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 950 megaluz</div>
+            <div><span class="label">Tripulación:</span> 4 personas</div>
+          </div>
+          <div class="card-footer">
+            <span class="status operativa">Operativa</span>
+            <small>ID-UW-06</small>
+          </div>
+        </article>
+
+        <!-- 7 Y-Wing -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Y-Wing</div>
+            <div class="card-type">Bombardero</div>
+          </div>
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 1000 megaluz</div>
+            <div><span class="label">Tripulación:</span> 2 personas</div>
+          </div>
+          <div class="card-footer">
+            <span class="status reparacion">En Reparación</span>
+            <small>ID-YW-07</small>
+          </div>
+        </article>
+
+        <!-- 8 X-Wing -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">X-Wing</div>
+            <div class="card-type">Caza</div>
+          </div>
+
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 1050 megaluz</div>
+            <div><span class="label">Tripulación:</span> 1 persona</div>
+          </div>
+
+          <div class="card-footer">
+            <span class="status operativa">Operativa</span>
+            <small>ID-XW-08</small>
+          </div>
+        </article>
+
+        <!-- 9 A-Wing -->
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">A-Wing</div>
+            <div class="card-type">Caza</div>
+          </div>
+
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 1300 megaluz</div>
+            <div><span class="label">Tripulación:</span> 1 persona</div>
+          </div>
+
+          <div class="card-footer">
+            <span class="status operativa">Operativa</span>
+            <small>ID-AW-09</small>
+          </div>
+        </article>
+
+        <!-- 10 Millennium Falcon -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Millennium Falcon</div>
+            <div class="card-type">Transporte</div>
+          </div>
+
+          <div class="card-body">
+            <div><span class="label">Velocidad:</span> 1500 megaluz</div>
+            <div><span class="label">Tripulación:</span> 6 personas</div>
+          </div>
+
+          <div class="card-footer">
+            <span class="status operativa">Operativa</span>
+            <small>ID-MF-10</small>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Pilotos</title>
+</head>
+<body>
+
+    <header>
+        <h1>Registro de Pilotos</h1>
+        <p>Gestión completa del personal de la Alianza Rebelde</p>
+    </header>
+
+    <!-- FORMULARIO PARA AÑADIR PILOTO -->
+    <section>
+        <h2>Añadir Nuevo Piloto</h2>
+
+        <form>
+            <label>Nombre *</label><br>
+            <input type="text" placeholder="Luke Skywalker"><br><br>
+
+            <label>Rango *</label><br>
+            <input type="text" placeholder="Comandante"><br><br>
+
+            <label>Nave Asignada *</label><br>
+            <select>
+                <option>Seleccionar nave...</option>
+                <option value="Fragata">Fragata Mon Calamari</option>
+                <option value="Bombardero">B-Wing</option>
+                <option value="Transporte">U-Wing</option>
+                <option value="Caza">X-Wing</option>
+                <option value="Caza">"A-Wing</option>
+                <option value="Transporte">Millennium Falcon</option>
+            
+            </select><br><br>
+
+            <label>Victorias en Combate *</label><br>
+            <input type="number" value="0"><br><br>
+
+            <label>Estado *</label><br>
+            <select>
+                <option>Activo</option>
+                <option>Inactivo</option>
+                <option>Desaparecido</option>
+            </select><br><br>
+
+            <button type="submit">Añadir Piloto</button>
+        </form>
+    </section>
+    
+    <!-- TABLA DE PILOTOS REGISTRADOS -->
+    <section>
+        <h2>Pilotos Registrados</h2>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Rango</th>
+                    <th>Nave Asignada</th>
+                    <th>Victorias</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td colspan="6">No hay pilotos registrados. ¡Añade el primero!</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+  <footer>
+    <p>Que la fuerza os acompañe</p>
+    <p align="center">© 1 DAW IES JACARANDA</p>
+    
+  </footer>
+</body>
+</html>
