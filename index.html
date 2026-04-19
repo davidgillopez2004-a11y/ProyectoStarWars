@@ -3,383 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Rebelde</title>
+    <title>Base Rebelde - Alianza Rebelde</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
   <div class="app">
-
-    <!-- BARRA SUPERIOR -->
     <header class="topbar">
       <div class="topbar-logo">Alianza Rebelde</div>
       <nav class="topbar-nav">
-        <a href="#Hangar">Hangar de pilotos</a>
-        <a href="#Registro">Registro de pilotos</a>
-        <a href="#Panel">Panel de misiones</a>
-        <a href="#Alianza">Mando de Alianza</a> 
+        <span class="active" data-section="hangar">Hangar de Naves</span>
+        <span data-section="pilotos">Registro de Pilotos</span>
+        <span data-section="misiones">Panel de Misiones</span>
+        <span data-section="dashboard">Mando de la Alianza</span>
       </nav>
     </header>
 
+    <div><button id="btn-modo">Cambiar a modo oscuro</button></div>
+
     <main class="content">
+      
+      <!-- SECCIÓN HANGAR -->
+      <section id="hangar" class="section">
+        <section class="title-block">
+          <h1>Hangar de Naves</h1>
+          <p>Catálogo completo de la flota de la Alianza Rebelde</p>
+        </section>
 
-      <!-- HANGAR DE NAVES -->
-      <section class="title-block">
-        <h1 id="Hangar">Hangar de Naves</h1>
-        <p>Catálogo completo de la flota de la Alianza Rebelde</p>
+        <section class="filters">
+          <div class="search">
+            <input type="text" id="buscadorNaves" placeholder="Buscar por nombre..." />
+          </div>
+          <div class="pill pill-strong">Todos</div>
+          <div class="pill">Mostrando 10 de 10 naves</div>
+          <div class="pill pill-ghost">Fil. Velocidad ↑</div>
+        </section>
+
+        <section class="grid" id="listaNaves">
+          <!-- Las naves se renderizan dinámicamente -->
+        </section>
       </section>
 
-      <section class="filters">
-        <div class="search">
-          <input type="text" placeholder="Buscar por nombre..." />
-        </div>
-        <div class="pill pill-strong">Todos</div>
-        <div class="pill">Mostrando 10 de 10 naves</div>
-        <div class="pill pill-ghost">Fil. Velocidad ↑</div>
-      </section>
+      <!-- SECCIÓN PILOTOS -->
+      <section id="pilotos" class="section">
+        <section class="title-block">
+          <h1>Registro de Pilotos</h1>
+          <p>Gestión completa del personal de la Alianza Rebelde</p>
+        </section>
 
-      <section class="grid">
+        <!-- FORMULARIO PARA AÑADIR/EDITAR PILOTO -->
+        <section class="form-section">
+          <h2 id="formTitle">Añadir Nuevo Piloto</h2>
+          
+          <form id="formPiloto">
+            <input type="hidden" id="pilotoIndex">
+            
+            <div class="form-group">
+              <label for="pilotoNombre">Nombre *</label>
+              <input type="text" id="pilotoNombre" placeholder="Luke Skywalker" required>
+            </div>
 
-        <!-- TARJETAS DE NAVES -->
-        <!-- 1 Transporte Rebelde -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">Transporte Rebelde</div>
-            <div class="card-type">Transporte</div>
-          </div>
+            <div class="form-group">
+              <label for="pilotoRango">Rango *</label>
+              <input type="text" id="pilotoRango" placeholder="Comandante" required>
+            </div>
 
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 700 megaluz</div>
-            <div><span class="label">Tripulación:</span> 10 personas</div>
-          </div>
+            <div class="form-group">
+              <label for="pilotoNave">Nave Asignada *</label>
+              <select id="pilotoNave" required>
+                <option value="">Seleccionar nave...</option>
+              </select>
+            </div>
 
-          <div class="card-footer">
-            <span class="status reparacion">En Reparación</span>
-            <small>ID-TR-01</small>
-          </div>
-        </article>
+            <div class="form-group">
+              <label for="pilotoVictorias">Victorias en Combate *</label>
+              <input type="number" id="pilotoVictorias" min="0" value="0" required>
+            </div>
 
-        <!-- 2 Fragata Mon Calamari -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">Fragata Mon Calamari</div>
-            <div class="card-type">Fragata</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 800 megaluz</div>
-            <div><span class="label">Tripulación:</span> 500 personas</div>
-          </div>
-          <div class="card-footer">
-            <span class="status operativa">Operativa</span>
-            <small>ID-FR-02</small>
-          </div>
-        </article>
+            <div class="form-group">
+              <label for="pilotoEstado">Estado *</label>
+              <select id="pilotoEstado" required>
+                <option value="activo">Activo</option>
+                <option value="herido">Herido</option>
+                <option value="KIA">KIA</option>
+              </select>
+            </div>
 
-        <!-- 3 Crucero Nebulon-B -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">Crucero Nebulon-B</div>
-            <div class="card-type">Fragata</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 850 megaluz</div>
-            <div><span class="label">Tripulación:</span> 800 personas</div>
-          </div>
-          <div class="card-footer">
-            <span class="status desmantelada">Desmantelada</span>
-            <small>ID-FR-03</small>
-          </div>
-        </article>
+            <div class="form-buttons">
+              <button type="submit" id="btnSubmit" class="btn btn-primary">Añadir Piloto</button>
+              <button type="button" id="btnCancel" class="btn btn-secondary" style="display:none;">Cancelar</button>
+            </div>
+          </form>
+        </section>
 
-        <!-- 4 Caza Z-95 -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">Caza Z-95</div>
-            <div class="card-type">Caza</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 900 megaluz</div>
-            <div><span class="label">Tripulación:</span> 1 persona</div>
-          </div>
-          <div class="card-footer">
-            <span class="status reparacion">En Reparación</span>
-            <small>ID-CZ-04</small>
-          </div>
-        </article>
-
-        <!-- 5 B-Wing -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">B-Wing</div>
-            <div class="card-type">Bombardero</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 950 megaluz</div>
-            <div><span class="label">Tripulación:</span> 1 persona</div>
-          </div>
-          <div class="card-footer">
-            <span class="status operativa">Operativa</span>
-            <small>ID-BW-05</small>
-          </div>
-        </article>
-
-        <!-- 6 U-Wing -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">U-Wing</div>
-            <div class="card-type">Transporte</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 950 megaluz</div>
-            <div><span class="label">Tripulación:</span> 4 personas</div>
-          </div>
-          <div class="card-footer">
-            <span class="status operativa">Operativa</span>
-            <small>ID-UW-06</small>
-          </div>
-        </article>
-
-        <!-- 7 Y-Wing -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">Y-Wing</div>
-            <div class="card-type">Bombardero</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 1000 megaluz</div>
-            <div><span class="label">Tripulación:</span> 2 personas</div>
-          </div>
-          <div class="card-footer">
-            <span class="status reparacion">En Reparación</span>
-            <small>ID-YW-07</small>
-          </div>
-        </article>
-
-        <!-- 8 X-Wing -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">X-Wing</div>
-            <div class="card-type">Caza</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 1050 megaluz</div>
-            <div><span class="label">Tripulación:</span> 1 persona</div>
-          </div>
-          <div class="card-footer">
-            <span class="status operativa">Operativa</span>
-            <small>ID-XW-08</small>
-          </div>
-        </article>
-
-        <!-- 9 A-Wing -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">A-Wing</div>
-            <div class="card-type">Caza</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 1300 megaluz</div>
-            <div><span class="label">Tripulación:</span> 1 persona</div>
-          </div>
-          <div class="card-footer">
-            <span class="status operativa">Operativa</span>
-            <small>ID-AW-09</small>
-          </div>
-        </article>
-
-        <!-- 10 Millennium Falcon -->
-        <article class="card">
-          <div class="card-header">
-            <div class="card-title">Millennium Falcon</div>
-            <div class="card-type">Transporte</div>
-          </div>
-          <div class="card-body">
-            <div><span class="label">Velocidad:</span> 1500 megaluz</div>
-            <div><span class="label">Tripulación:</span> 6 personas</div>
-          </div>
-          <div class="card-footer">
-            <span class="status operativa">Operativa</span>
-            <small>ID-MF-10</small>
-          </div>
-        </article>
-
-      </section>
-
-      <!-- REGISTRO DE PILOTOS -->
-      <section>
-        <h2 id="Registro">Registro de Pilotos</h2>
-        <p>Gestión completa del personal de la Alianza Rebelde</p>
-
-        <h3>Añadir Nuevo Piloto</h3>
-
-        <form>
-            <label>Nombre *</label>
-            <input type="text" placeholder="Luke Skywalker">
-
-            <label>Rango *</label>
-            <input type="text" placeholder="Comandante">
-
-            <label>Nave Asignada *</label>
-            <select>
-                <option>Seleccionar nave...</option>
-                <option>Fragata Mon Calamari</option>
-                <option>B-Wing</option>
-                <option>U-Wing</option>
-                <option>X-Wing</option>
-                <option>A-Wing</option>
-                <option>Millennium Falcon</option>
-            </select>
-
-            <label>Victorias en Combate *</label>
-            <input type="number" value="0">
-
-            <label>Estado *</label>
-            <select>
-                <option>Activo</option>
-                <option>Inactivo</option>
-                <option>Desaparecido</option>
-            </select>
-
-            <button type="submit">Añadir Piloto</button>
-        </form>
-
-        <h3>Pilotos Registrados</h3>
-
-        <table border="1" cellpadding="8" cellspacing="0">
+        <!-- TABLA DE PILOTOS -->
+        <section class="table-section">
+          <h2>Pilotos Registrados</h2>
+          <table id="tablaPilotos" class="pilot-table">
             <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Rango</th>
-                    <th>Nave Asignada</th>
-                    <th>Victorias</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
+              <tr>
+                <th>Nombre</th>
+                <th>Rango</th>
+                <th>Nave Asignada</th>
+                <th>Victorias</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
             </thead>
-
-            <tbody>
-                <tr>
-                    <td colspan="6">No hay pilotos registrados. ¡Añade el primero!</td>
-                </tr>
+            <tbody id="tbodyPilotos">
+              <!-- Los pilotos se renderizan dinámicamente -->
             </tbody>
-        </table>
+          </table>
+        </section>
       </section>
 
-      <!-- PANEL DE MISIONES -->
-      <section>
-        <h2 id="Panel">Panel de Misiones</h2>
-        <p>Tablero Kanban de operaciones activas</p>
+      <!-- SECCIÓN MISIONES -->
+      <section id="misiones" class="section">
+        <section class="title-block">
+          <h1>Panel de Misiones</h1>
+          <p>Seguimiento de operaciones de la Alianza Rebelde</p>
+        </section>
 
-        <form class="formulario">
-            <label>Nombre de la Misión *</label>
-            <input type="text" placeholder="Operación Estrella de la Muerte">
+        <!-- FORMULARIO PARA CREAR MISIÓN -->
+        <section class="form-section">
+          <h2>Nueva Misión</h2>
+          
+          <form id="formMision">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="misionNombre">Nombre de la Misión *</label>
+                <input type="text" id="misionNombre" placeholder="Operación Estrella" required>
+              </div>
 
-            <label>Piloto Asignado *</label>
-            <select>
-                <option>Seleccionar piloto...</option>
-                <option>Luke Skywalker</option>
-                <option>Han Solo</option>
-                <option>Darth Vader</option>
-            </select>
-
-            <label>Dificultad *</label>
-            <select>
-                <option>Fácil</option>
-                <option selected>Media</option>
-                <option>Difícil</option>
-            </select>
-
-            <label>Fecha de Inicio *</label>
-            <input type="date">
-
-            <label>Descripción *</label>
-            <textarea placeholder="Descripción de la misión..."></textarea>
-
-            <div class="botones">
-                <button class="cancelar" type="button">Cancelar</button>
-                <button class="crear" type="submit">Crear Misión</button>
-            </div>
-        </form>
-
-        <div class="kanban">
-            <div class="columna">
-                <h3>Pendiente (0)</h3>
-                <p class="vacio">No hay misiones pendientes.</p>
+              <div class="form-group">
+                <label for="misionDificultad">Nivel de Dificultad *</label>
+                <select id="misionDificultad" required>
+                  <option value="">Seleccionar...</option>
+                  <option value="facil">Fácil</option>
+                  <option value="media">Media</option>
+                  <option value="dificil">Difícil</option>
+                  <option value="suicida">Suicida</option>
+                </select>
+              </div>
             </div>
 
-            <div class="columna">
-                <h3>En Curso (0)</h3>
-                <p class="vacio">No hay misiones en curso.</p>
+            <div class="form-group">
+              <label for="misionDescripcion">Descripción Breve *</label>
+              <textarea id="misionDescripcion" placeholder="Descripción de la misión..." rows="3" required></textarea>
             </div>
 
-            <div class="columna">
-                <h3>Completada (0)</h3>
-                <p class="vacio">No hay misiones completadas.</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="misionPiloto">Piloto Asignado *</label>
+                <select id="misionPiloto" required>
+                  <option value="">Seleccionar piloto...</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="misionFecha">Fecha de Inicio *</label>
+                <input type="date" id="misionFecha" required>
+              </div>
             </div>
-        </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary">Crear Misión</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- FILTRO DE DIFICULTAD -->
+        <section class="filters">
+          <span class="filter-label">Filtrar por dificultad:</span>
+          <select id="filtroDificultad" class="filter-select">
+            <option value="">Todas</option>
+            <option value="facil">Fácil</option>
+            <option value="media">Media</option>
+            <option value="dificil">Difícil</option>
+            <option value="suicida">Suicida</option>
+          </select>
+        </section>
+
+        <!-- KANBAN -->
+        <section class="kanban">
+          <div class="kanban-column" id="columna-pendiente">
+            <div class="kanban-header">
+              <h3>⏳ Pendiente</h3>
+              <span class="kanban-count" id="count-pendiente">0</span>
+            </div>
+            <div class="kanban-cards" id="cards-pendiente"></div>
+          </div>
+
+          <div class="kanban-column" id="columna-encurso">
+            <div class="kanban-header">
+              <h3>🔥 En Curso</h3>
+              <span class="kanban-count" id="count-encurso">0</span>
+            </div>
+            <div class="kanban-cards" id="cards-encurso"></div>
+          </div>
+
+          <div class="kanban-column" id="columna-completada">
+            <div class="kanban-header">
+              <h3>✅ Completada</h3>
+              <span class="kanban-count" id="count-completada">0</span>
+            </div>
+            <div class="kanban-cards" id="cards-completada"></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- SECCIÓN DASHBOARD -->
+      <section id="dashboard" class="section">
+        <section class="title-block">
+          <h1>Mando de la Alianza</h1>
+          <p>Resumen de la flota y operaciones</p>
+        </section>
       </section>
 
     </main>
 
-      <!--Mando de la Alianza-->
-
-    <section>
-      <h2 id="Alianza">Mando de la Alianza</h2>
-      <p>Panel de control y estadísticas generales</p>
-
-    <!-- Estadísticas principales -->
-
-    <div class="grid">
-
-        <article class="card">
-            <div class="card-header">
-                <div class="card-title">Naves Totales</div>
-            </div>
-
-            <div class="card-body">
-                <h1>10</h1>
-            </div>
-
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <div class="card-title">Pilotos Totales</div>
-            </div>
-
-            <div class="card-body">
-                <h1>0</h1>
-            </div>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <div class="card-title">Misiones Totales</div>
-            </div>
-
-            <div class="card-body">
-                <h1>0</h1>
-            </div>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <div class="card-title">Tasa de Éxito</div>
-            </div>
-            <div class="card-body">
-                <h1>0%</h1>
-            </div>
-        </article>
-
-    </div>
-
     <footer>
-      <br>
       <p>Que la fuerza os acompañe</p>
       <p align="center">© 1 DAW IES JACARANDA</p>
     </footer>
-
   </div>
 
   <script src="js/javascript.js"></script>
