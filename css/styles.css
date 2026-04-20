@@ -1,1 +1,906 @@
+/* ESTILOS GENERALES DEL SITIO */
+body {
+  font-family: Arial, sans-serif;
+  background: #0d1117;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
 
+/* Toda la pagina */
+.app {
+  max-width: 1100px;
+  margin: auto;
+  background: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* BARRA SUPERIOR header */
+.topbar {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #30363d;
+}
+
+/* Texto Alianza Rebelde */
+.topbar-logo {
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+/* Navegación superior */
+.topbar-nav span {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Opción activa del menú */
+.topbar-nav .active {
+  background: #30363d;
+  border-radius: 5px;
+}
+
+/* TÍTULOS PRINCIPALES  */
+.title-block h1 {
+  margin-bottom: 5px;
+}
+
+.title-block p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* FILTROS Y BUSCADOR */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* Input de búsqueda */
+.search input {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: white;
+}
+
+/* Etiquetas pill */
+.pill {
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  font-size: 13px;
+}
+
+/* GRID DE TARJETAS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+/*TARJETAS DE NAVES */
+.card {
+  background: #1f242d;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+}
+
+/* Cabecera de la tarjeta (nombre + tipo) */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Tipo de nave */
+.card-type {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Cuerpo de la tarjeta (velocidad, tripulación) */
+.card-body {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card-body .label {
+  color: #9ca3af;
+}
+
+/* Pie de la tarjeta */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+/* ESTADOS DE LAS NAVES */
+.status {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Estado: Operativa */
+.operativa {
+  background: #1e4620;
+  color: #2ecc71;
+}
+
+/* Estado: En reparación */
+.reparacion {
+  background: #4d3b00;
+  color: #f1c40f;
+}
+
+/* Estado: Desmantelada */
+.desmantelada {
+  background: #4a1f1f;
+  color: #e74c3c;
+}
+
+/* Registros de naves */
+
+section {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+/* Espaciado entre secciones */
+section + section {
+    margin-top: 25px;
+}
+
+/* Estilo para los títulos dentro de secciones */
+section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 8px;
+}
+
+/* Inputs cuando están seleccionados */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+/* Botón desactivado */
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+/* Hover en filas de la tabla */
+tbody tr:hover {
+    background: #1f2937;
+}
+
+/* Celdas de acciones */
+td:last-child {
+    text-align: center;
+}
+
+/* Mensaje de tabla vacía */
+td[colspan] {
+    padding: 20px;
+    font-style: italic;
+}
+
+/* 
+   ESTILOS PARA PILOTOS
+*/
+
+/* Sección del formulario */
+.form-section {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    margin-bottom: 25px;
+}
+
+.form-section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 8px;
+}
+
+/* Grupos del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+/* Botones del formulario */
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos de botones */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #238636;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2ea043;
+}
+
+.btn-secondary {
+    background: #30363d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #484f58;
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.btn-edit {
+    background: #1f6feb;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #388bfd;
+}
+
+.btn-delete {
+    background: #da3633;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #f85149;
+}
+
+/* Tabla de pilotos */
+.table-section {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.table-section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 8px;
+}
+
+/* Tabla */
+.pilot-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pilot-table th,
+.pilot-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+}
+
+.pilot-table th {
+    background: #21262d;
+    color: #9ca3af;
+    font-weight: bold;
+}
+
+.pilot-table tbody tr:hover {
+    background: #1f2937;
+}
+
+/* Estados de pilotos */
+.status-piloto {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status-piloto.activo {
+    background: #1e4620;
+    color: #2ecc71;
+}
+
+.status-piloto.herido {
+    background: #4d3b00;
+    color: #f1c40f;
+}
+
+.status-piloto.KIA {
+    background: #4a1f1f;
+    color: #e74c3c;
+}
+
+/* Dashboard stats */
+.dashboard-stats {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #1f242d;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    min-width: 120px;
+    text-align: center;
+    flex: 1;
+}
+
+.stat-card h3 {
+    margin: 0 0 10px 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f1c40f;
+    margin: 0;
+}
+
+.stat-detail {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 5px 0 0 0;
+}
+
+/* Dashboard sections */
+.dashboard-section {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    margin: 0 0 15px 0;
+    color: #f1c40f;
+    font-size: 18px;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+
+/* Stat cards con colores */
+.stat-card.stat-operativa {
+    border-left: 4px solid #2ecc71;
+}
+
+.stat-card.stat-reparacion {
+    border-left: 4px solid #f1c40f;
+}
+
+.stat-card.stat-destruida {
+    border-left: 4px solid #e74c3c;
+}
+
+/* Highlight de estadísticas */
+.stat-highlight {
+    background: #0d1117;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.highlight-label {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.highlight-value {
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Barra de progreso */
+.progress-section {
+    margin-top: 20px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.progress-bar {
+    background: #0d1117;
+    height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #30363d;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #f1c40f, #f39c12);
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 12px;
+}
+
+/* Ocultar secciones por defecto */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+}
+
+/* 
+   ESTILOS PARA KANBAN
+*/
+
+/* Filtros */
+.filter-label {
+    color: #9ca3af;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: white;
+    font-size: 14px;
+}
+
+/* Contenedor Kanban */
+.kanban {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Columnas del Kanban */
+.kanban-column {
+    background: #161b22;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado de columna */
+.kanban-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #30363d;
+    background: #21262d;
+    border-radius: 8px 8px 0 0;
+}
+
+.kanban-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #f1c40f;
+}
+
+.kanban-count {
+    background: #30363d;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Contenedor de tarjetas */
+.kanban-cards {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Mensaje cuando no hay misiones */
+.kanban-empty {
+    text-align: center;
+    color: #9ca3af;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Tarjetas de misión */
+.kanban-card {
+    background: #1f242d;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kanban-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Cabecera de tarjeta */
+.kanban-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Badge de dificultad */
+.kanban-dificultad {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.kanban-dificultad.facil {
+    background: #1e4620;
+    color: #2ecc71;
+}
+
+.kanban-dificultad.media {
+    background: #4d3b00;
+    color: #f1c40f;
+}
+
+.kanban-dificultad.dificil {
+    background: #4a1f1f;
+    color: #e74c3c;
+}
+
+.kanban-dificultad.suicida {
+    background: #7b1fa2;
+    color: #e040fb;
+}
+
+/* Botón eliminar tarjeta */
+.btn-delete-card {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.btn-delete-card:hover {
+    background: #da3633;
+    color: white;
+}
+
+/* Título de tarjeta */
+.kanban-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: white;
+}
+
+/* Descripción */
+.kanban-desc {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+/* Info de piloto y fecha */
+.kanban-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #9ca3af;
+    margin-bottom: 10px;
+}
+
+/* Botones de movimiento */
+.kanban-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-move {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    background: #30363d;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-move:hover {
+    background: #58a6ff;
+}
+
+/* Formulario de misión - filas */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+/* Responsive Kanban */
+@media (max-width: 900px) {
+    .kanban {
+        grid-template-columns: 1fr;
+    }
+    
+    .kanban-column {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- BOTÓN MODO CLARO/OSCURO --- */
+#boton-modo {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    padding: 12px 24px !important;
+    cursor: pointer !important;
+    border: none !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    font-family: Arial, sans-serif !important;
+    transition: all 0.3s ease !important;
+    z-index: 9999 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%) !important;
+    color: #1a1a2e !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+#boton-modo:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 25px rgba(241, 196, 15, 0.6) !important;
+    cursor: pointer !important;
+}
+
+body:not(.modo-oscuro) #boton-modo {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+    color: #ffffff !important;
+    border: 2px solid #c0392b !important;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3) !important;
+}
+
+body:not(.modo-oscuro) #boton-modo:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5) !important;
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%) !important;
+}
+
+/* MODO CLARO - cuando NO tiene la clase modo-oscuro */
+body:not(.modo-oscuro) {
+    background: #f5f7fa;
+    color: #ac2715;
+}
+
+body:not(.modo-oscuro) .app {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.modo-oscuro) .topbar {
+    border-bottom-color: #e0e0e0;
+}
+
+body:not(.modo-oscuro) .topbar-logo {
+    color: #e74c3c;
+}
+
+body:not(.modo-oscuro) .title-block p {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .card {
+    background: #ffffff;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .card-title {
+    color: #1a1a2e;
+    font-weight: bold;
+}
+
+body:not(.modo-oscuro) .card-type,
+body:not(.modo-oscuro) .card-body .label {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .card-body {
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .pill {
+    background: #e9ecef;
+    border-color: #ced4da;
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .search input {
+    background: #fff;
+    border-color: #ced4da;
+    color: #1a1a2e;
+}
+
+body:not(.modo-oscuro) .form-section,
+body:not(.modo-oscuro) .table-section {
+    background: #fff;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .form-group label {
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .form-group input,
+body:not(.modo-oscuro) .form-group select,
+body:not(.modo-oscuro) .form-group textarea {
+    background: #f8f9fa;
+    border-color: #ced4da;
+    color: #1a1a2e;
+}
+
+body:not(.modo-oscuro) .pilot-table th {
+    background: #e9ecef;
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .pilot-table td {
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .pilot-table tbody tr:hover {
+    background: #f1f3f5;
+}
+
+body:not(.modo-oscuro) .kanban-column {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .kanban-card {
+    background: #fff;
+    border-color: #ced4da;
+}
+
+body:not(.modo-oscuro) .kanban-desc,
+body:not(.modo-oscuro) .kanban-info {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .stat-card {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .stat-card h3 {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .stat-number {
+    color: #e74c3c;
+}
+
+body:not(.modo-oscuro) .progress-bar {
+    background: #e9ecef;
+}
+
+body:not(.modo-oscuro) .highlight-label {
+    color: #666;
+}
