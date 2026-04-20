@@ -1,4 +1,4 @@
- /* ESTILOS GENERALES DEL SITIO */
+/* ESTILOS GENERALES DEL SITIO */
 body {
   font-family: Arial, sans-serif;
   background: #0d1117;
@@ -742,4 +742,165 @@ td[colspan] {
     .form-row {
         grid-template-columns: 1fr;
     }
+}
+
+/* --- BOTÓN MODO CLARO/OSCURO --- */
+#boton-modo {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    padding: 12px 24px !important;
+    cursor: pointer !important;
+    border: none !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    font-family: Arial, sans-serif !important;
+    transition: all 0.3s ease !important;
+    z-index: 9999 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%) !important;
+    color: #1a1a2e !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+#boton-modo:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 25px rgba(241, 196, 15, 0.6) !important;
+    cursor: pointer !important;
+}
+
+body:not(.modo-oscuro) #boton-modo {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+    color: #ffffff !important;
+    border: 2px solid #c0392b !important;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3) !important;
+}
+
+body:not(.modo-oscuro) #boton-modo:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5) !important;
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%) !important;
+}
+
+/* MODO CLARO - cuando NO tiene la clase modo-oscuro */
+body:not(.modo-oscuro) {
+    background: #f5f7fa;
+    color: #ac2715;
+}
+
+body:not(.modo-oscuro) .app {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.modo-oscuro) .topbar {
+    border-bottom-color: #e0e0e0;
+}
+
+body:not(.modo-oscuro) .topbar-logo {
+    color: #e74c3c;
+}
+
+body:not(.modo-oscuro) .title-block p {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .card {
+    background: #ffffff;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .card-title {
+    color: #1a1a2e;
+    font-weight: bold;
+}
+
+body:not(.modo-oscuro) .card-type,
+body:not(.modo-oscuro) .card-body .label {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .card-body {
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .pill {
+    background: #e9ecef;
+    border-color: #ced4da;
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .search input {
+    background: #fff;
+    border-color: #ced4da;
+    color: #1a1a2e;
+}
+
+body:not(.modo-oscuro) .form-section,
+body:not(.modo-oscuro) .table-section {
+    background: #fff;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .form-group label {
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .form-group input,
+body:not(.modo-oscuro) .form-group select,
+body:not(.modo-oscuro) .form-group textarea {
+    background: #f8f9fa;
+    border-color: #ced4da;
+    color: #1a1a2e;
+}
+
+body:not(.modo-oscuro) .pilot-table th {
+    background: #e9ecef;
+    color: #495057;
+}
+
+body:not(.modo-oscuro) .pilot-table td {
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .pilot-table tbody tr:hover {
+    background: #f1f3f5;
+}
+
+body:not(.modo-oscuro) .kanban-column {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .kanban-card {
+    background: #fff;
+    border-color: #ced4da;
+}
+
+body:not(.modo-oscuro) .kanban-desc,
+body:not(.modo-oscuro) .kanban-info {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .stat-card {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+body:not(.modo-oscuro) .stat-card h3 {
+    color: #666;
+}
+
+body:not(.modo-oscuro) .stat-number {
+    color: #e74c3c;
+}
+
+body:not(.modo-oscuro) .progress-bar {
+    background: #e9ecef;
+}
+
+body:not(.modo-oscuro) .highlight-label {
+    color: #666;
 }

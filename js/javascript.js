@@ -559,3 +559,23 @@ document.querySelectorAll(".section").forEach(s => s.classList.remove("active"))
 document.getElementById("hangar").classList.add("active");
 
 renderHangar();
+
+// --- MODO CLARO/OSCURO ---
+document.addEventListener("DOMContentLoaded", function () {
+    const boton = document.getElementById("boton-modo");
+    if (!boton) return;
+    // Inicializa el texto del botón según el modo actual
+    if (document.body.classList.contains("modo-oscuro")) {
+        boton.textContent = "Cambiar a modo claro";
+    } else {
+        boton.textContent = "Cambiar a modo oscuro";
+    }
+    boton.addEventListener("click", function () {
+        document.body.classList.toggle("modo-oscuro");
+        if (document.body.classList.contains("modo-oscuro")) {
+            boton.textContent = "Cambiar a modo claro";
+        } else {
+            boton.textContent = "Cambiar a modo oscuro";
+        }
+    });
+});
