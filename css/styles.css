@@ -199,9 +199,9 @@ td[colspan] {
     font-style: italic;
 }
 
-/* ---------------------------
+/* 
    ESTILOS PARA PILOTOS
-   --------------------------- */
+*/
 
 /* Sección del formulario */
 .form-section {
@@ -508,9 +508,9 @@ td[colspan] {
     }
 }
 
-/* ---------------------------
+/* 
    ESTILOS PARA KANBAN
-   --------------------------- */
+*/
 
 /* Filtros */
 .filter-label {
